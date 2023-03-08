@@ -1,0 +1,22 @@
+.navbar-layout {
+  background: none;
+  box-shadow: 0 0 16px rgb(0 0 0 / 15%);
+}
+
+.sniffspot-link {
+  display: inline-flex;
+}
+
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+}
+
+.logo-img {
+  object-fit: contain;
+  padding-right: 5px;
+}

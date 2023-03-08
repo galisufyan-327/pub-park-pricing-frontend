@@ -1,0 +1,46 @@
+.spot-review-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.spot-review-container-first {
+  display: flex;
+  gap: 15px;
+}
+
+.spot-review-container-second {
+  display: flex;
+  flex-direction: column;
+}
+
+.spot-review-container-second p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #323232;
+
+}
+
+.spot-review-avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.spot-review-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spot-review-details span:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #323232;
+}
+
+.spot-review-details span:last-child {
+  font-size: 12px;
+  color: #787878;
+}

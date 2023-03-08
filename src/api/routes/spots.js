@@ -1,0 +1,1 @@
+export const spotsEndpoint = `/api/v1/spots`;

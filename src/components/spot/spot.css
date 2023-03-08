@@ -1,0 +1,37 @@
+.spot-card {
+  border: 0;
+}
+
+.spot-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 1%;
+}
+
+.spot-price {
+  display: flex;
+}
+
+.spot-price-value {
+  font-size: 16px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.spot-price-description {
+  display: flex;
+  align-items: center;
+}
+
+.spot-reviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spot-reviews-count {
+  margin-left: 5px;
+  color: #787878;
+}

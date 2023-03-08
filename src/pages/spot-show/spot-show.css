@@ -1,0 +1,73 @@
+.spot-show-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.spot-show-inner-container {
+  min-height: 100vh;
+  height: 100%;
+}
+
+.spot-show-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.spot-show-layout {
+  background-color: transparent;
+  max-width: 900px;
+}
+
+.ant-image-img {
+  border-radius: 16px;
+  object-fit: fill;
+}
+
+.spot-show-sub-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spot-show-pricing {
+  margin-top: 0;
+}
+
+.spot-show-price-box {
+  border-radius: 8px;
+  box-shadow: 0 0 16px rgb(0 0 0 / 15%);
+  display: inline-block;
+  padding: 20px;
+  width: max-content;
+  font-size: 16px;
+  color: #323232;
+}
+
+.spot-show-price-box span:first-child {
+  font-weight: bolder;
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.spot-show-description {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #323232;
+}
+
+.spot-show-carousel-container {
+  height: 420px;
+}
+
+.spot-show-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spot-show-title-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
