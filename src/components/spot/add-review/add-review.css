@@ -1,0 +1,9 @@
+.add-reviw-form-container {
+  display: flex;
+  
+}
+
+.new-review-title {
+  text-align: left;
+  margin-bottom: 2%;
+}

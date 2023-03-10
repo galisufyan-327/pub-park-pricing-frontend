@@ -38,9 +38,8 @@ const CreateSpot = () => {
   )
 
   useLayoutEffect(() => {
-    initializeSpot();
+    if (params?.id) initializeSpot();
   }, [params?.id, initializeSpot]);
-
 
   const onSubmit = async (event) => {
     event.preventDefault();

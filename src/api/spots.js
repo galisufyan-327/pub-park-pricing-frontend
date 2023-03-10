@@ -18,21 +18,21 @@ export const fetchSpots = async (sortOrder) => {
   }
 }
 
-export const getSpot = async (id) => {
-  try {
-    return await api.get(`${spotsEndpoint}/${id}`);
-  } catch (error) {
-    errorNotify(getError(error));
-    return error?.response;
-  }
-}
-
 export const createSpot = async (data) => {
   try {
     return await api.post(spotsEndpoint, data);
   } catch (error) {
     errorNotify(getError(error));
     return error;
+  }
+}
+
+export const getSpot = async (id) => {
+  try {
+    return await api.get(`${spotsEndpoint}/${id}`);
+  } catch (error) {
+    errorNotify(getError(error));
+    return error?.response;
   }
 }
 

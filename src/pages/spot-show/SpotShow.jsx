@@ -1,16 +1,19 @@
 import { Button, Col, Divider, Image, Layout, Rate, Row, Space, Spin } from 'antd';
 import Title from 'antd/es/typography/Title';
-import React, { useCallback, useLayoutEffect, useState } from 'react'
+import React, { useCallback, useLayoutEffect, useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getSpot } from '../../api/spots';
 import "./spot-show.css";
-import SpotReviews from '../../components/spot/reviews/SpotReviews';
 import { Carousel } from 'react-responsive-carousel';
 import noImage from "../../assets/no-image.jpg";
+import SpotReviews from '../../components/spot/reviews/SpotReviews';
+import AddReview from '../../components/spot/add-review/AddReview';
 
 const ShowSpot = () => {
   const [spot, setSpot] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [addReview, setAddReview] = useState(false);
+  const [processType, setProcessType] = useState("new");
   const params = useParams();
   const navigate = useNavigate();
 
@@ -23,7 +26,7 @@ const ShowSpot = () => {
     else navigate("/");
   }, []);
 
-  useLayoutEffect(() => { fetchSpot(); }, [fetchSpot]);
+  useLayoutEffect(() => { fetchSpot(); }, [fetchSpot, addReview]);
 
   return (
     <Row className="spot-show-container">
@@ -58,10 +61,22 @@ const ShowSpot = () => {
             <Title level={3} className="spot-show-pricing">Description</Title>
             <p className="spot-show-description">{spot?.description}</p>
             <Divider type="horizontal" style={{ backgroundColor: "lightgray" }} />
-            <Title level={3} className="spot-show-pricing">Reviews</Title>
-
+            <Row>
+              <Col span={20}><Title level={3} className="spot-show-pricing">Reviews</Title></Col>
+              <Col span={4}><Button type='link' className='spot-show-button' onClick={()=> {setAddReview(true)}}>+ Add Review</Button></Col>
+            </Row>
+            {addReview &&
+            <AddReview 
+              setAddReview={setAddReview}
+              processType={processType}
+            > 
+            </AddReview>
+            }
             <RatingDetails reviews={spot?.reviews} showSimple />
-            <SpotReviews reviews={spot?.reviews} />
+            <SpotReviews 
+              reviews={spot?.reviews}
+              fetchSpot={fetchSpot} 
+            />
           </Layout>
         }
 
@@ -121,3 +136,4 @@ const ShowPageCarousel = ({ images, imageStyle }) => {
     </Row>
   )
 }
+
