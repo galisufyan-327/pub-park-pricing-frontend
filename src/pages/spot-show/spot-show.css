@@ -81,3 +81,7 @@
   max-height: 500px;
   width: "95%";
 }
+
+.carousel-status {
+  display: none !important;
+}
