@@ -29,7 +29,7 @@ const SniffspotIndex = () => {
   return (
     <>
       <Row className="spot-title-container" gutter={24}>
-        <Col span={12}><Title className="spot-list-title" level={2}>Popular private dog parks</Title></Col>
+        <Col span={12}><Title className="spot-list-title-responsive spot-list-title" level={2}>Popular private dog parks</Title></Col>
         <Col className="create-spot-btn" span={12}>
           <span>Sort by:</span>
           <Select
@@ -47,7 +47,7 @@ const SniffspotIndex = () => {
       <Row className="spot-grid" gutter={[gutterValues, gutterValues]}>
 
         {!!spots.length && spots.map((spot) => (
-          <Col className="gutter-row" span={8} key={spot?.id} >
+          <Col className="min-400 gutter-row" span={8} key={spot?.id} >
             <Link to={`/spots/${spot.id}`} target="_blank"><Spot spot={spot} /></Link>
           </Col>
         ))}

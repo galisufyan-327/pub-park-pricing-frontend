@@ -18,10 +18,6 @@ const Navbar = () => {
     {
       key: 2,
       label: "Top dog trainers"
-    },
-    {
-      key: 3,
-      label: "Become a host"
     }
   ]
 
