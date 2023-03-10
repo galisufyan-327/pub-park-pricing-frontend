@@ -1,11 +1,12 @@
-import { Button, Carousel, Col, Divider, Layout, Rate, Row, Space, Spin } from 'antd';
+import { Button, Col, Divider, Image, Layout, Rate, Row, Space, Spin } from 'antd';
 import Title from 'antd/es/typography/Title';
 import React, { useCallback, useLayoutEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getSpot } from '../../api/spots';
 import "./spot-show.css";
 import SpotReviews from '../../components/spot/reviews/SpotReviews';
-import ImageCarousel from '../../components/spot/image-carousel/ImageCarousel';
+import { Carousel } from 'react-responsive-carousel';
+import noImage from "../../assets/no-image.jpg";
 
 const ShowSpot = () => {
   const [spot, setSpot] = useState(null);
@@ -39,15 +40,13 @@ const ShowSpot = () => {
             {!!spot?.reviews.length && <RatingDetails reviews={spot?.reviews} />}
             <Row>
               <Col span={24} className="spot-show-carousel-container">
-                <Carousel>
-                  <ImageCarousel
-                    images={spot?.images_urls}
-                    imageStyle={{
-                      width: "95%",
-                      height: 420,
-                    }}
-                  />
-                </Carousel>
+                <ShowPageCarousel
+                  images={spot?.images_urls}
+                  imageStyle={{
+                    width: "95%",
+                    height: 500,
+                  }}
+                />
               </Col>
             </Row>
             <Divider type="horizontal" style={{ backgroundColor: "lightgray" }} />
@@ -98,3 +97,27 @@ const RatingDetails = ({ reviews, showSimple }) => {
 }
 
 export default ShowSpot;
+
+const ShowPageCarousel = ({ images, imageStyle }) => {
+  return (
+    <Row>
+      <Col>
+        {!!!images.length ?
+          <div>
+            <img src={noImage} alt="not-available" style={{ objectFit: "contain" }} />
+          </div> :
+          <Carousel
+            autoPlay
+            useKeyboardArrows
+            interval={1000}
+          >
+            {images.map((src, index) => <div key={index}>
+              <img src={src} style={imageStyle ?? {}} alt={index} />
+            </div>
+            )}
+          </Carousel>
+        }
+      </Col>
+    </Row>
+  )
+}

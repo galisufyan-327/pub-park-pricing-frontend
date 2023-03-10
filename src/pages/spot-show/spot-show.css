@@ -57,7 +57,7 @@
 }
 
 .spot-show-carousel-container {
-  height: 420px;
+  max-height: 650px;
 }
 
 .spot-show-title-container {
@@ -70,4 +70,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.carousel .thumb img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.carousel .slide img {
+  max-height: 500px;
+  width: "95%";
 }

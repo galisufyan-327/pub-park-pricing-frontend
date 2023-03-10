@@ -1,15 +1,10 @@
-import { Carousel } from "antd"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import noImage from "../../../assets/no-image.jpg";
+import { Carousel } from "antd";
 
 export default function ImageCarousel({ images = [], imageStyle }) {
-  const carouselClass = {
-    ".ant-carousel .slick-prev, .ant-carousel .slick-next": {
-      display: "block",
-      background: "red",
-    }
-  }
   return (
-    <Carousel autoplaySpeed={7000} draggable={true} arrows className={carouselClass}>
+    <Carousel autoplaySpeed={7000} draggable={true} arrows>
       {!!images.length && images.map((src, index) => <div key={index}>
         <img src={src} style={imageStyle ?? {}} alt={index} />
       </div>
