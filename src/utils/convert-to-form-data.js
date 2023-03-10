@@ -14,7 +14,7 @@ const convertToFormData = (data) => {
 
   const appendFiletoForm = (key, value) => {
     [].map.call(value, (item) => {
-      (value.length > 1) ? Form.append(`${key}[]`, item) : Form.append(`${key}`, item)
+      Form.append(`${key}[]`, item)
     }
     );
   }
