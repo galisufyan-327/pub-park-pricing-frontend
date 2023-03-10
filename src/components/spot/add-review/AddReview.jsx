@@ -76,7 +76,7 @@ const AddReview = (props) => {
           <TextArea name="comment" value={comment ?? ""} onChange={(e)=> {setComment(e.target.value)}} />
         </Form.Item>
         <Row>
-          <Col span={2}>
+          <Col className="min-width-mx" span={2}>
             <Form.Item
               wrapperCol={{
                 offset: 0,
