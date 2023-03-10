@@ -2,7 +2,6 @@
   "name": "sniffspot-react",
   "version": "0.1.0",
   "engines": {
-    "yarn": "1.22.19",
     "npm": "8.19.2",
     "node": "16.18.1"
   },
