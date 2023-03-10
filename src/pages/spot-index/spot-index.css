@@ -40,7 +40,10 @@
 }
 
 .create-spot-btn {
-  text-align: end;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .no-spot-found {

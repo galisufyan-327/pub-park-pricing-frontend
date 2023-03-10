@@ -1,6 +1,6 @@
 import { Button, Carousel, Col, Divider, Layout, Rate, Row, Space, Spin } from 'antd';
 import Title from 'antd/es/typography/Title';
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useCallback, useLayoutEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getSpot } from '../../api/spots';
 import "./spot-show.css";
@@ -13,16 +13,16 @@ const ShowSpot = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  useLayoutEffect(() => { fetchSpot(); }, []);
-
-  const fetchSpot = async () => {
+  const fetchSpot = useCallback(async () => {
     const response = await getSpot(params?.id)
     if (response?.status === 200) {
       setSpot(response.data);
       setLoading(false);
     }
     else navigate("/");
-  }
+  }, []);
+
+  useLayoutEffect(() => { fetchSpot(); }, [fetchSpot]);
 
   return (
     <Row className="spot-show-container">

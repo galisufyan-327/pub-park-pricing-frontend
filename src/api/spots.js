@@ -9,9 +9,9 @@ const getError = (error) => {
   return { message: error?.name, description: error?.message }
 }
 
-export const fetchSpots = async () => {
+export const fetchSpots = async (sortOrder) => {
   try {
-    return await api.get(spotsEndpoint);
+    return await api.get(`${spotsEndpoint}?price_order=${sortOrder}`);
   } catch (error) {
     errorNotify(getError(error));
     return error;
